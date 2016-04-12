@@ -59,7 +59,7 @@ EOT
       query = PuppetDB::ParserHelper.extract(*Array(options[:extract]), query)
     end
 
-    uri = "/pdb/query/#{version}/#{endpoint}"
+    uri = "/#{version}/#{endpoint}"
     uri += URI.escape "?query=#{query.to_json}" unless query.nil? || query.empty?
 
     debug("PuppetDB query: #{query.to_json}")
